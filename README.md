@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/gobricks/ginyourface.svg?branch=master)](https://travis-ci.org/gobricks/ginyourface)
+[![Go Report Card](https://goreportcard.com/badge/github.com/gobricks/ginyourface)](https://goreportcard.com/report/github.com/gobricks/ginyourface)
+
+
 # ginyourface
 
 [Gin](https://github.com/gin-gonic/gin) middleware for [facecontrol](https://github.com/gobricks/facecontrol).
