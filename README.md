@@ -11,28 +11,28 @@
 Create file `main.go` and paste the following code into it:
 
 ``` go
-    package main
+package main
 
-    import (
-        "github.com/gin-gonic/gin"
+import (
+    "github.com/gin-gonic/gin"
 
-        "github.com/gobricks/ginyourface"
-    )
+    "github.com/gobricks/ginyourface"
+)
 
-    func main() {
-        r := gin.New()
+func main() {
+    r := gin.New()
 
-        // now every request will be validated through Facecontrol service
-        // and userPayload will be returned if user has valid token
-        r.Use(ginyourface.Facecontrol())
-        
-        r.GET("/personal", func(c *gin.Context) {
-            userData := c.MustGet("userPayload").(interface{})
-            c.String(http.StatusOK, "Hello %s", userData["username"])
-        })
+    // now every request will be validated through Facecontrol service
+    // and userPayload will be returned if user has valid token
+    r.Use(ginyourface.Facecontrol())
+    
+    r.GET("/personal", func(c *gin.Context) {
+        userData := c.MustGet("userPayload").(interface{})
+        c.String(http.StatusOK, "Hello %s", userData["username"])
+    })
 
-        r.Run(":8080")
-    }
+    r.Run(":8080")
+}
 ```
 
 # Build and run
